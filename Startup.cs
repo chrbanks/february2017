@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using February2017.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace February2017
 {
@@ -30,6 +32,8 @@ namespace February2017
         {
             // Add framework services.
             services.AddMvc();
+            var connection = @"Server=(localdb)\mssqllocaldb;Database=EmployeesDB;Trusted_Connection=true;";
+            services.AddDbContext<EmployeeContext>(options => options.UseSqlServer(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

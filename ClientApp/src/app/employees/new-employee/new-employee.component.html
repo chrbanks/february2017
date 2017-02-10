@@ -1,0 +1,24 @@
+﻿<div class="container-fluid">
+    <h1>New Employee</h1>
+    <div>
+        <form (ngSubmit)="onSubmit()" #employeeForm="ngForm">
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" class="form-control" id="firstName" required [(ngModel)]="employee.firstName" name="firstName" />
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" class="form-control" id="lastName" required [(ngModel)]="employee.lastName" name="lastName" />
+            </div>
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" class="form-control" id="title" [(ngModel)]="employee.title" name="title" />
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" class="form-control" id="email" required [(ngModel)]="employee.email" name="email" />
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="!employeeForm.form.valid">Create</button>
+        </form>
+    </div>
+</div>

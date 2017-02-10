@@ -1,0 +1,10 @@
+﻿<div *ngIf="employee">
+    <h4>Employee Details</h4>
+    <div><label>Employee Id:</label> {{employee.id}}</div>
+    <div><label>First Name:</label><input [(ngModel)]="employee.firstName" /></div>
+    <div><label>Last Name:</label><input [(ngModel)]="employee.lastName" /></div>
+    <div><label>Title:</label><input [(ngModel)]="employee.title" /></div>
+    <div><label>Email:</label><input [(ngModel)]="employee.email" /></div>
+    <button class="btn btn-danger" (click)="goBack()">Back</button>
+    <button class="btn btn-primary" (click)="save()">Save Changes</button>
+</div>

@@ -1,0 +1,28 @@
+﻿<h1>Employees</h1>
+<button class="btn btn-primary" (click)="gotoNew()">New Employee</button><br />
+<h4>All Employees:</h4>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Title</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees">
+                <td>{{employee.id}}</td>
+                <td>{{employee.firstName}} {{employee.lastName}}</td>
+                <td>{{employee.title}}</td>
+                <td>{{employee.email}}</td>
+                <td>
+                    <a><span class='glyphicon glyphicon-th-list' (click)="gotoDetails(employee)"></span></a>
+                    <a><span class='glyphicon glyphicon-trash' (click)="delete(employee)"></span></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
